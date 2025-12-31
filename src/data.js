@@ -29,7 +29,7 @@ export const photoScreenHeading = "The moments that shaped us"
 
 // Add your video inside "public/videos" folder
 // Example: "/videos/memories.mp4" - Update the path to your video file
-export const videoPath = "/videos/memories.mp4"
+export const videoPath = "/images/video.mp4"
 
 
 // ==========================
