@@ -118,3 +118,27 @@ html {
   outline-offset: 2px;
 }
 
+/* Video Player Styling */
+video::-webkit-media-controls-panel {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-fullscreen-button {
+  filter: brightness(1.2);
+}
+
+video::-webkit-media-controls-timeline {
+  padding: 0 10px;
+}
+
+/* Firefox video controls */
+video::-moz-media-controls {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
