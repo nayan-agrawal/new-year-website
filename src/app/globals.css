@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #f0f0f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Message card with enhanced styling */
+.card {
+  position: relative;
+  border: 10px solid #c084fc;
+  box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1), 0 10px 40px rgba(192, 132, 252, 0.15);
+  background-size: cover;
+  background-color: #faf3e7;
+  transition: transform 0.3s ease;
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+.card .front {
+  position: absolute;
+  border: 10px solid #c084fc;
+  backface-visibility: hidden;
+  background-color: #faf3e7;
+  background-size: contain;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.9s ease-in-out;
+}
+
+.card.flipped .front {
+  transform: perspective(800px) rotateY(-170deg);
+}
+
+.card.flipped .back {
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #faf3e7;
+}
+
+.card .back {
+  position: absolute;
+  border: 10px solid #c084fc;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.9s ease-in-out;
+  background-color: #dcd2dc;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.imgset {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -215px;
+}
+
+.imgset img {
+  box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+}
+
+/* Custom Scrollbar with enhanced styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ffa6f0, #bf80ff);
+  border-radius: 10px;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #f472d8, #a855f7);
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(192, 132, 252, 0.3);
+  color: #ffffff;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(192, 132, 252, 0.5);
+  outline-offset: 2px;
+}
+
